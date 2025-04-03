@@ -19,3 +19,8 @@
     6. add project id, privatekey and client email in .env file
     7. Go to the documentation and check the admin sdk to interact with the firebase
     8. Checkout the admin.ts file for the authentication
+
+# Step-4 Setup of SignUp and SignIn page
+    1. Created auth.action.ts ▶️ /lib/actions folder to handle sign up and sign and token
+    2. In authform sending user data
+    3. in root layout and auth layout protectng the routes by checking is token present or not

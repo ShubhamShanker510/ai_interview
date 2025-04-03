@@ -37,7 +37,7 @@ export default function InterviewCard({interviewId,userId, role, type,techstack,
                 </p>
             </div>
             <div className="flex flex-row justify-between">
-                <p><DisplayTechIcons techStack={techstack}/></p>
+                <DisplayTechIcons techStack={techstack}/>
                 <Button className="btn-primary">
                     <Link href={feedback?`/interview/${interviewId}/feedback`:`/interview/${interviewId}`}/>
                     {feedback ? "Check Feedback" : "View Interview"}
