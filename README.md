@@ -24,3 +24,6 @@
     1. Created auth.action.ts ▶️ /lib/actions folder to handle sign up and sign and token
     2. In authform sending user data
     3. in root layout and auth layout protectng the routes by checking is token present or not
+
+# Step-8 Interview Page
+    1. Created a folder interview inside the root folder
