@@ -36,3 +36,14 @@
 # Step-8 Setup of API
     1. Create a api folder in app folder 
     2. Setup of post request which going to take every single data and store in the firebase
+
+# Step-9 Vapi Workflow
+    1. create you workflow 
+    2. First gather all the info you want make sure name are case-sensitive ao its better to write in lowercase
+    3. make sure output required.
+    4. Than use the deployed url and paste in api(after making gather click on plus button and click on api)
+    5. paste the link of your vapi route where it is taking user info
+    6. In last end call 
+    7. Go to the aassistant and live the workflow and than click on call and checkout is it working or not
+    8. In last .env file add the vapi workflow id 
+    9. Update the vercel also
