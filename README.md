@@ -27,3 +27,12 @@
 
 # Step-8 Interview Page
     1. Created a folder interview inside the root folder
+
+# AI Workflow
+    As When the interview ends the vapi send every info to the api and than that api sends all the data to gemini which gemini will response and than that response again goes back to the api where all the data is going to be stored in the database
+
+    Using ai-sdk to handle the request and response from ai tool
+
+# Step-8 Setup of API
+    1. Create a api folder in app folder 
+    2. Setup of post request which going to take every single data and store in the firebase

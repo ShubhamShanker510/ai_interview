@@ -13,6 +13,10 @@ export default function Agent({ userName }: AgentProps) {
     const currentStatus = callStatus.FINISHED;  // Set this based on the actual status value
 
     const isSpeaking = true;
+    const messages=[
+        'Whats your name?',
+        'My name is Vapi, Nice to meet you!',]
+    const lastMessage = messages[messages.length - 1];
     return (
         <>
             <div className='call-view'>
@@ -30,6 +34,16 @@ export default function Agent({ userName }: AgentProps) {
                     </div>
                 </div>
             </div>
+            {messages.length > 0 && (
+                <div className="transcript-border">
+                        <div className='transcript'>
+                            <p key={lastMessage} className={cn('transition-opacity duration-500 opacity opacity-0','animate-fade-in opacity-100')}>
+                            {lastMessage}
+                            </p>
+                        </div>
+                </div>
+        )
+                }
             <div className='w-full flex justify-center'>
                 {currentStatus !== callStatus.ACTIVE ? (
                     <button className='relative btn-call'>
