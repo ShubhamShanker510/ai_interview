@@ -54,6 +54,11 @@
     2. In Agent.tsx configuring the vapi agent.
 
  # Step-11 Show GeneratedInterviews
-    1. Build 2 api to get the latest interview
+    1. Build 2 api to get the latest interview in auth.action.ts
     2. In root  page.tsx calling both the api parallel using promise.all
     3. U will get to error make sure te error will  u on a firebase link and than save the indexes
+
+
+# Step -12 Interview Session
+    1. Created a dynamic page in interview folder
+    2. In Agent.tsx checking if call ended than checking the type and handling responses according to the type
