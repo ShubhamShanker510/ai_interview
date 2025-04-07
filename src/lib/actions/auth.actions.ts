@@ -52,10 +52,10 @@ export async function setSessionCookie(idToken: string) {
 
     cookieStore.set('session', sessionCookie, {
         maxAge: 60 * 60 * 24 * 7 * 1000,
-        // httpOnly: true,
-        // secure: process.env.NODE_ENV === 'production', // true in production, false for local testing
-        // path: '/',
-        // sameSite: 'lax',
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // true in production, false for local testing
+        path: '/',
+        sameSite: 'lax',
     });
 
     // Log cookie store to check if it was set
@@ -115,6 +115,7 @@ export async function getCurrentUser(): Promise<User | null> {
 
     try {
         const decodedClaims = await auth.verifySessionCookie(sessionCookie, true);
+        console.log('decodedClaims', decodedClaims);
 
         const userRecord = await db.collection('users').doc(decodedClaims.uid).get();
 
@@ -136,4 +137,25 @@ export async function isAuthenticated() {
     const user = await getCurrentUser();
 
     return !!user;
+}
+
+export async function getInterviewByUserId(userId: string): Promise<Interview[] | null>{
+    const interviews=await db.collection('interviews')
+    .where('userId', '==', userId).orderBy('createdAt', 'desc').get();
+
+    return interviews.docs.map((doc)=>({
+        id: doc.id,
+        ...doc.data(),
+    }))as Interview[];
+}
+
+export async function getLatestInterviews(params: GetLatestInterviewsParams): Promise<Interview[] | null>{
+    const { userId, limit=20 } = params;
+    const interviews=await db.collection('interviews')
+    .orderBy('createdAt', 'desc').where('finalized', '==', true).where('userId', '!=', userId).limit(limit).get();
+
+    return interviews.docs.map((doc)=>({
+        id: doc.id,
+        ...doc.data(),
+    }))as Interview[];
 }

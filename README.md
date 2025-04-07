@@ -47,3 +47,13 @@
     7. Go to the aassistant and live the workflow and than click on call and checkout is it working or not
     8. In last .env file add the vapi workflow id 
     9. Update the vercel also
+
+
+# Step-10 Vapi Agent
+    1. getting current user in page.tsx of interview folder
+    2. In Agent.tsx configuring the vapi agent.
+
+ # Step-11 Show GeneratedInterviews
+    1. Build 2 api to get the latest interview
+    2. In root  page.tsx calling both the api parallel using promise.all
+    3. U will get to error make sure te error will  u on a firebase link and than save the indexes
