@@ -8,19 +8,20 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
-  // webpack(config, { isServer }) {
-  //   if (!isServer) {
-  //     // Mock or ignore Node.js modules in the browser
-  //     config.resolve.fallback = {
-  //       fs: false,
-  //       net: false,
-  //       http2: false,
-  //       tls: false,  // Add other Node.js core modules if needed
-  //     };
-  //   }
+  webpack(config, { isServer }) {
+    if (!isServer) {
+      // Mock or ignore Node.js modules in the browser
+      config.resolve.fallback = {
+        fs: false,
+        net: false,
+        http2: false,
+        tls: false,  // Add other Node.js core modules if needed
+        child_process: false,
+      };
+    }
 
-  //   return config;
-  // },
+    return config;
+  },
 };
 
 export default nextConfig;
